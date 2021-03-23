@@ -1,2 +1,4 @@
-gunicorn
 pytelegrambotapi
+django
+gunicorn
+django-heroku
