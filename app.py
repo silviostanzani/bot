@@ -7,11 +7,11 @@ import telebot
 
 app = Flask(__name__)
 
-@app.route('/')
-@app.route('/index/')
+#@app.route('/')
+#@app.route('/index/')
 
-def index():
-    return render_template('index.html')
+#def index():
+#    return render_template('index.html')
 
 ## É necessário um token, obtido atráves do BotFather do próprio Telegram
 token = "1720866154:AAF9dw56n4wgn4JW-eKCh5Ni0-VMjWUgFPs"
