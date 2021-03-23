@@ -71,9 +71,12 @@ def text_message(message):
         # Aqui entraria o chamado à parte de processamento da mensagem em si
         bot.reply_to(message, message.text)
 
+bot.polling()
+
 # main - flask
 #teste localhost
 '''if __name__ == '__main__':
+    bot.polling()	
     app.run(debug=True)'''
 
 #teste heroku
