@@ -48,10 +48,3 @@ def text_message(message):
         bot.reply_to(message, message.text)
 
 bot.polling()
-
-# main - flask
-#teste localhost
-#'''if __name__ == '__main__':
-#    bot.polling()	
-#    app.run(debug=True)'''
-
