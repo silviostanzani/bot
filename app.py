@@ -6,12 +6,12 @@ from flask import render_template
 import pycep_correios
 import telebot
 
-#app = Flask(__name__)
+app = Flask(__name__)
 
-#@app.route('/')
-#@app.route('/index/')
-#def index():
-#    return render_template('index.html')
+@app.route('/')
+@app.route('/index/')
+def index():
+    return render_template('index.html')
 
 
 
@@ -71,9 +71,12 @@ def text_message(message):
         # Aqui entraria o chamado à parte de processamento da mensagem em si
         bot.reply_to(message, message.text)
 
-
+# main - flask
+#teste localhost
+'''if __name__ == '__main__':
+    app.run(debug=True)'''
 
 #teste heroku
-if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5000))
-    app.run(host='0.0.0.0', port=port)
+#if __name__ == "__main__":
+#    port = int(os.environ.get("PORT", 5000))
+#    app.run(host='0.0.0.0', port=port)
