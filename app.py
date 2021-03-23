@@ -6,39 +6,39 @@ from flask import render_template
 import pycep_correios
 import telebot
 
-app = Flask(__name__)
+#app = Flask(__name__)
 
-@app.route('/')
-@app.route('/index/')
-def index():
-    return render_template('index.html')
+#@app.route('/')
+#@app.route('/index/')
+#def index():
+#    return render_template('index.html')
 
 
 
-@app.route('/zipcode/<zipcode>') # http://localhost:5000/zipcode/60050111
-def validar_cep(zipcode):
-    '''Função valida de número de cep junto ao site dos Correios.
-        - Parâmetro: cep.
-        - Retorna: json com as infomações:
-            - Cep válidos: Logradouro/Nome; Bairro/Distrito; Localidade/UF; CEP.
-            - Inválidos: msn: "Cep inválido"
-    '''
-    try:
-        endereco = pycep_correios.get_address_from_cep(zipcode)
-        #exemplo: http://localhost:5000/Cep/60050220
-        res = endereco
-        return json.dumps(res, ensure_ascii=False).encode('utf8')
-        #return jsonify(endereco)#f'<h1>Cep {endereco}</h1>'
-    except:
-        res = f'zip code invalid.:{zipcode}.'
-        return json.dumps(res, ensure_ascii=False).encode('utf8')
-        #return jsonify(f'Cep inválido:{cep}.')
+#@app.route('/zipcode/<zipcode>') # http://localhost:5000/zipcode/60050111
+#def validar_cep(zipcode):
+#    '''Função valida de número de cep junto ao site dos Correios.
+#        - Parâmetro: cep.
+#        - Retorna: json com as infomações:
+#            - Cep válidos: Logradouro/Nome; Bairro/Distrito; Localidade/UF; CEP.
+#            - Inválidos: msn: "Cep inválido"
+#    '''
+#    try:
+#        endereco = pycep_correios.get_address_from_cep(zipcode)
+#        #exemplo: http://localhost:5000/Cep/60050220
+#        res = endereco
+#        return json.dumps(res, ensure_ascii=False).encode('utf8')
+#        #return jsonify(endereco)#f'<h1>Cep {endereco}</h1>'
+#    except:
+#        res = f'zip code invalid.:{zipcode}.'
+#        return json.dumps(res, ensure_ascii=False).encode('utf8')
+#        #return jsonify(f'Cep inválido:{cep}.')
 
-#teste localhost
-'''if __name__ == '__main__':
-    app.run(debug=True)'''
+##teste localhost
+#'''if __name__ == '__main__':
+#    app.run(debug=True)'''#
 
-# É necessário um token, obtido atráves do BotFather do próprio Telegram
+## É necessário um token, obtido atráves do BotFather do próprio Telegram
 token = "1720866154:AAF9dw56n4wgn4JW-eKCh5Ni0-VMjWUgFPs"
 bot = telebot.TeleBot(token)
 
